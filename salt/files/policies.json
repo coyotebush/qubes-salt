@@ -1,0 +1,26 @@
+{
+  "policies": {
+    "DisableFirefoxAccounts": true,
+    "DisablePocket": true,
+    "DisableTelemetry": true,
+    "DisplayBookmarksToolbar": "never",
+
+    "Homepage": {
+      "StartPage": "none"
+    },
+    "NewTabPage": false,
+    "OverrideFirstRunPage": "",
+
+    "Preferences": {
+      "browser.tabs.inTitlebar": {
+        "Value": 0,
+        "Type": "number",
+        "Status": "default"
+      }
+    },
+
+    "SearchEngines": {
+      "Default": "DuckDuckGo"
+    }
+  }
+}
