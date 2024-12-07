@@ -5,6 +5,10 @@
     "DisableTelemetry": true,
     "DisplayBookmarksToolbar": "never",
 
+    "AutofillAddressEnabled": false,
+    "AutofillCreditCardEnabled": false,
+    "OfferToSaveLogins": false,
+
     "Homepage": {
       "StartPage": "none"
     },
@@ -21,6 +25,7 @@
 
     "SearchEngines": {
       "Default": "DuckDuckGo"
-    }
+    },
+    "SearchSuggestEnabled": true
   }
 }
