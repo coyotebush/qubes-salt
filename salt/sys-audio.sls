@@ -21,6 +21,7 @@ sys-audio-create-qube:
         - '00:14.0' # USB controller for Bluetooth and webcam
         - '00:1f.3' # Audio controller
       - pci_strictreset: false
+      - autostart: true
     - features:
       - enable:
         - servicevm
