@@ -1,0 +1,7 @@
+{% set sites = pillar['web']['sites'] %}
+qvm-firewall $1 reset
+qvm-firewall $1 del --rule-no 0
+{% for url in sites.values() %}
+qvm-firewall $1 add accept dsthost={{ url.split('/')[2] }}
+{% endfor %}
+qvm-firewall $1 add drop

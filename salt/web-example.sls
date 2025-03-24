@@ -1,7 +1,6 @@
 {% if grains['id'] == 'dom0' %}
-web-example-create-qube:
+web-example:
   qvm.vm:
-    - name: web-example
     - present:
       - label: yellow
       # only ESR supports SearchEngines, only Debian packages ESR
@@ -12,6 +11,12 @@ web-example-create-qube:
     - features:
       - set:
         - menu-items: firefox-esr.desktop
+firewall web-example:
+  cmd.script:
+    - source: salt://{{ slspath }}/files/firewall.sh.jinja
+    - template: jinja
+    - require:
+      - qvm: web-example
 {% elif grains['id'] == 'web-example' %}
 web-example-firefox-policy:
   file.managed:
