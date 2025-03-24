@@ -17,7 +17,9 @@
 user:
   dom0 or web-dvm:
     - web-dvm
-  dom0 or fedora-40-xfce or sys-audio:
+  dom0 or fedora-41-custom:
+    - fedora
+  dom0 or fedora-41-custom or sys-audio:
     - sys-audio
 #  '*':
 #    - locale

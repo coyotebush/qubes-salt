@@ -1,7 +1,7 @@
 # sys-audio provides virtualized audio and video to other qubes.
 # It persists state including Bluetooth device pairings.
 
-{% set template = 'fedora-40-xfce' %}
+{% set template = 'fedora-41-custom' %}
 {% if grains['id'] == 'dom0' %}
 sys-audio-create-qube:
   qvm.vm:
