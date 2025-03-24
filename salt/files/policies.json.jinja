@@ -1,0 +1,37 @@
+{% set sites = pillar['web']['sites'] %}
+{
+  "policies": {
+    "DisableFirefoxAccounts": true,
+    "DisablePocket": true,
+    "DisableTelemetry": true,
+    "DisplayBookmarksToolbar": "never",
+
+    "Bookmarks": [
+    {% for title, url in sites.items() %}
+      {
+        "Title": "{{ title }}",
+        "URL": "{{ url }}"
+      }
+      {{ ',' if not loop.last }}
+    {% endfor %}
+    ],
+
+    "Homepage": {
+      "StartPage": "none"
+    },
+    "NewTabPage": false,
+    "OverrideFirstRunPage": "",
+
+    "Preferences": {
+      "browser.tabs.inTitlebar": {
+        "Value": 0,
+        "Type": "number",
+        "Status": "default"
+      }
+    },
+
+    "SearchEngines": {
+      "Default": "DuckDuckGo"
+    }
+  }
+}
