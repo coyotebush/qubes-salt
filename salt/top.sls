@@ -17,6 +17,8 @@
 user:
   dom0 or web-dvm:
     - web-dvm
+  dom0 or web-example:
+    - web-example
   dom0 or fedora-44-custom:
     - fedora
   dom0 or fedora-44-custom or sys-audio:
