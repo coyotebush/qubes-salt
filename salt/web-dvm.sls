@@ -15,6 +15,9 @@ web-dvm-create-qube:
         - appmenus-dispvm
       - set:
         - menu-items: firefox-esr.desktop
+    - tags:
+      - add:
+        - web
 {% elif grains['id'] == 'web-dvm' %}
 web-dvm-firefox-policy:
   file.managed:
