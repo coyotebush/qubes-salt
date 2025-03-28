@@ -11,6 +11,9 @@ web-example:
     - features:
       - set:
         - menu-items: firefox-esr.desktop
+    - tags:
+      - add:
+        - web
 firewall web-example:
   cmd.script:
     - source: salt://{{ slspath }}/files/firewall.sh.jinja

@@ -3,8 +3,10 @@
   "policies": {
     "DisableFirefoxAccounts": true,
     "DisablePocket": true,
+    "DisableProfileImport": true,
     "DisableTelemetry": true,
-    "DisplayBookmarksToolbar": "never",
+    "DisplayBookmarksToolbar": "newtab",
+    "NoDefaultBookmarks": true,
 
     "Bookmarks": [
     {% for title, url in sites.items() %}
@@ -28,10 +30,6 @@
         "Type": "number",
         "Status": "default"
       }
-    },
-
-    "SearchEngines": {
-      "Default": "DuckDuckGo"
     }
   }
 }
