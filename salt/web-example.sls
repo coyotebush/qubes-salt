@@ -1,3 +1,4 @@
+{% set sites = pillar['web']['sites'] %}
 {% if grains['id'] == 'dom0' %}
 web-example:
   qvm.vm:
@@ -14,12 +15,13 @@ web-example:
     - tags:
       - add:
         - web
-firewall web-example:
-  cmd.script:
-    - source: salt://{{ slspath }}/files/firewall.sh.jinja
-    - template: jinja
-    - require:
-      - qvm: web-example
+    - firewall:
+      - set:
+        {% for url in sites.values() %}
+        - 'action=accept dsthost={{ url.split("/")[2] }}'
+        {% endfor %}
+        - 'action=accept specialtarget=dns'
+        - 'action=drop'
 {% elif grains['id'] == 'web-example' %}
 web-example-firefox-policy:
   file.managed:
