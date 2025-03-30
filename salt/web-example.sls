@@ -27,7 +27,7 @@ web-example-firefox-policy:
   file.managed:
     - name: /rw/config/firefox/policies/policies.json
     - makedirs: true
-    - source: salt://{{ slspath }}/files/policies.json.jinja
+    - source: salt://{{ tpldir }}/files/policies.json.jinja
     - template: jinja
 web-example-firefox-rc:
   file.managed:
