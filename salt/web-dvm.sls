@@ -23,7 +23,7 @@ web-dvm-firefox-policy:
   file.managed:
     - name: /rw/config/firefox/policies/policies.json
     - makedirs: true
-    - source: salt://{{ slspath }}/files/policies.json
+    - source: salt://{{ tpldir }}/files/policies.json
 web-dvm-firefox-rc:
   file.managed:
     - name: /rw/config/rc.local.d/firefox.rc
