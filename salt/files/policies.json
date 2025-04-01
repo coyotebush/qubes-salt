@@ -20,6 +20,11 @@
         "Value": 0,
         "Type": "number",
         "Status": "default"
+      },
+      "ui.key.menuAccessKeyFocuses": {
+        "Value": false,
+        "Type": "boolean",
+        "Status": "default"
       }
     },
 
