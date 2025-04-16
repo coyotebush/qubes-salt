@@ -19,7 +19,6 @@ debian-packages:
       - gnucash
       - graphviz
       - hledger
-      - inkscape
       - jq
       - libdbd-sqlite3
       - libreoffice-calc

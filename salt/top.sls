@@ -15,8 +15,6 @@
 
 # === User Defined Salt States ================================================
 user:
-  dom0:
-    - offline-dvm
   dom0 or web-dvm:
     - web-dvm
   dom0 or fedora-41-custom:
@@ -25,5 +23,6 @@ user:
     - sys-audio
   dom0 or debian-12-custom:
     - debian
+    - offline-dvm
 #  '*':
 #    - locale

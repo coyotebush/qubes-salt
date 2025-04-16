@@ -5,7 +5,7 @@ offline-dvm:
       - label: red
     - prefs:
       - label: red
-      - template: fedora-41-custom
+      - template: debian-12-custom
       - template_for_dispvms: true
       - netvm: ''
     - features:
@@ -13,4 +13,13 @@ offline-dvm:
         - appmenus-dispvm
       - set:
         - menu-items: 'thunar.desktop xfce4-terminal.desktop'
+{% elif grains['id'] == 'debian-12-custom' %}
+offline-dvm-packages:
+  pkg.installed:
+    - pkgs:
+      - gimp
+      - inkscape
+      - libimage-exiftool-perl
+      - mpv
+      - viking
 {% endif %}
