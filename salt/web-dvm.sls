@@ -10,6 +10,8 @@ web-dvm-create-qube:
       - label: red
       - template: debian-12-xfce
       - template_for_dispvms: true
+      # otherwise, default disposable template of disposables becomes web-dvm
+      - default_dispvm: offline-dvm
       # allow increasing max memory if needed
       - memory: 1000
     - features:
