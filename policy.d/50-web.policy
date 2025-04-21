@@ -1,0 +1,11 @@
+# allow qvm-open-in-dvm and qvm-open-in-vm @default to work
+qubes.OpenURL           *           @anyvm          @dispvm             ask default_target=@dispvm:web-dvm
+qubes.OpenURL           *           @anyvm          @default            ask default_target=@dispvm:web-dvm
+# explicit rule for the default target to prevent AssertionError on `default_target in targets_for_ask`
+qubes.OpenURL           *           @anyvm          @dispvm:web-dvm     ask default_target=@dispvm:web-dvm
+# not the DisposableVM template itself despite the tag!
+qubes.OpenURL           *           @anyvm          web-dvm             deny
+# existing disposables launched from the template and other browser qubes
+qubes.OpenURL           *           @anyvm          @tag:web            ask default_target=@dispvm:web-dvm
+# override "@anyvm ask" from 90-default.policy
+qubes.OpenURL           *           @anyvm          @anyvm              deny

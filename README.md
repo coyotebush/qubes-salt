@@ -4,7 +4,8 @@ per the community [Qubes Salt Beginner's Guide](https://forum.qubes-os.org/t/qub
 
 The correspondence between this repository and my dom0 filesystem is:
 
-* **salt**: contents of `/srv/user_salt`
+* **salt**: contents of `/srv/user_salt/`
+* **policy.d**: additions to `/etc/qubes/policy.d/`
 
 I apply states by running commands like
 

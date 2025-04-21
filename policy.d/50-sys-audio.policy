@@ -1,0 +1,28 @@
+admin.Events	*	sys-audio @adminvm	allow	target=dom0
+admin.Events	+property-set_audiovm	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.Events	+property-reset_audiovm	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.Events	+property-pre-set_audiovm	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.Events	+property-pre-reset_audiovm	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.Events	+property-reset_xid	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.Events	+domain-stopped	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.Events	+domain-shutdown	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.Events	+domain-start	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.Events	+connection-established	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+
+admin.vm.CurrentState	*	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.vm.List	*	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.vm.CurrentState	*	sys-audio	@adminvm	allow	target=dom0
+admin.vm.List	*	sys-audio	@adminvm	allow	target=dom0
+
+admin.vm.property.Get	+audiovm	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.vm.property.Get	+xid	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.vm.property.Get	+stubdom_xid	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.vm.feature.CheckWithTemplate	+audio	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.vm.feature.CheckWithTemplate	+audio-model	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.vm.feature.CheckWithTemplate	+supported-service.pipewire	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+admin.vm.feature.CheckWithTemplate	+audio-low-latency	sys-audio	@tag:audiovm-sys-audio	allow	target=dom0
+
+admin.vm.property.GetAll	*	sys-audio	@tag:audiovm-sys-audio	deny	notify=no
+
+
+qvc.Webcam * @anyvm sys-audio  ask
