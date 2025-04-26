@@ -15,6 +15,8 @@
 
 # === User Defined Salt States ================================================
 user:
+  dom0 or debian-12-web:
+    - web-template
   dom0 or web-dvm:
     - web-dvm
   dom0 or web-example:
