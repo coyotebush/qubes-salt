@@ -22,11 +22,14 @@ sys-audio-create-qube:
         - '00:1f.3' # Audio controller
       - pci_strictreset: false
       - autostart: true
+      - provides-network: true # otherwise qubesd removes the servicevm feature on boot
     - features:
       - enable:
         - servicevm
         - service.audiovm
         - service.blueman
+      - disable:
+        - service.network-manager # otherwise enabled due to provides-network per `man qvm-service`
       - set:
         - menu-items: 'blueman-manager.desktop org.pulseaudio.pavucontrol.desktop'
 {% elif grains['id'] == template %}
