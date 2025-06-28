@@ -12,12 +12,13 @@ offline-dvm:
       - enable:
         - appmenus-dispvm
       - set:
-        - menu-items: 'thunar.desktop xfce4-terminal.desktop'
+        - menu-items: 'gmtp.desktop thunar.desktop xfce4-terminal.desktop'
 {% elif grains['id'] == 'debian-12-custom' %}
 offline-dvm-packages:
   pkg.installed:
     - pkgs:
       - gimp
+      - gmtp
       - inkscape
       - libimage-exiftool-perl
       - mpv
