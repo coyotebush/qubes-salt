@@ -13,6 +13,8 @@ fedora-41-custom:
 fedora-packages:
   pkg.installed:
     - pkgs:
+      # https://github.com/QubesOS/qubes-issues/issues/9639
+      - chromium
       - qubes-app-shutdown-idle
       - qubes-video-companion
       # TODO upgrade once Taskwarrior 3 is packaged
