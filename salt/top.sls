@@ -21,6 +21,8 @@ user:
     - fedora
   dom0 or fedora-41-custom or sys-audio:
     - sys-audio
+  dom0 or fedora-41-custom or zoom:
+    - zoom
   dom0 or debian-12-custom:
     - debian
     - offline-dvm
