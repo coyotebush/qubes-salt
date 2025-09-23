@@ -1,14 +1,14 @@
 {% if grains['id'] == 'dom0' %}
-fedora-41-xfce:
+fedora-42-xfce:
   qvm.template_installed
 
-fedora-41-custom:
+fedora-42-custom:
   qvm.clone:
-    - source: fedora-41-xfce
+    - source: fedora-42-xfce
     - require:
-      - qvm: fedora-41-xfce
+      - qvm: fedora-42-xfce
 
-{% elif grains['id'] == 'fedora-41-custom' %}
+{% elif grains['id'] == 'fedora-42-custom' %}
 # Packages used in unmanaged qubes
 fedora-packages:
   pkg.installed:
@@ -17,7 +17,6 @@ fedora-packages:
       - chromium
       - qubes-app-shutdown-idle
       - qubes-video-companion
-      # TODO upgrade once Taskwarrior 3 is packaged
-      - task2
+      - task
       - viking
 {% endif %}
