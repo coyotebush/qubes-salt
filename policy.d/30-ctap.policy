@@ -1,0 +1,2 @@
+ctap.GetInfo   * @anyvm sys-audio ask default_target=sys-audio
+ctap.ClientPin * @anyvm sys-audio ask default_target=sys-audio
