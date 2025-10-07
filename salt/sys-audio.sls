@@ -30,6 +30,7 @@ sys-audio-create-qube:
         - service.blueman
       - disable:
         - service.network-manager # otherwise enabled due to provides-network per `man qvm-service`
+        - restart-after-update
       - set:
         - menu-items: 'blueman-manager.desktop org.pulseaudio.pavucontrol.desktop'
 {% elif grains['id'] == template %}
