@@ -14,6 +14,7 @@ debian-packages:
   pkg.installed:
     - pkgs:
       - exfat-fuse
+      - galculator
       - gimp
       - git
       - gnucash
