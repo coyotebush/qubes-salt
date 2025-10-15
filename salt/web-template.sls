@@ -30,9 +30,9 @@ web-template-packages:
     - pkgs:
       - make
 
-'https://github.com/raffaeleflorio/qubes-url-redirector.git':
+'https://github.com/coyotebush/qubes-url-redirector.git':
   git.latest:
-    - rev: 5334e5d9cd6e9fabd2001fd90731ebf8c2c4be22
+    - rev: 4858a5a30175444a8f55154bebb44fef500beb2e
     - target: /root/qubes-url-redirector
     - user: root
     - force_fetch: true
@@ -40,11 +40,10 @@ web-template-packages:
 'make firefox':
   cmd.run:
     - cwd: /root/qubes-url-redirector
+    - require:
+      - file: '/usr/lib/mozilla/native-messaging-hosts/qvm_open_in_vm.json'
 
 # TODO update qubes-url-redirector Makefile to use this location
 '/usr/lib/mozilla/native-messaging-hosts/qvm_open_in_vm.json':
-  file.copy:
-    - source: '/home/user/.mozilla/native-messaging-hosts/qvm_open_in_vm.json'
-    - makedirs: true
-    - force: true
+  file.absent
 {% endif %}
