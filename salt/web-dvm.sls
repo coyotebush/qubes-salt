@@ -1,3 +1,4 @@
+{% set template = 'debian-12-custom' %}
 {% if grains['id'] == 'dom0' %}
 web-dvm-create-qube:
   qvm.vm:
@@ -5,10 +6,10 @@ web-dvm-create-qube:
     - present:
       - label: red
       # only ESR supports SearchEngines, only Debian packages ESR
-      - template: debian-12-xfce
+      - template: {{ template }}
     - prefs:
       - label: red
-      - template: debian-12-xfce
+      - template: {{ template }}
       - template_for_dispvms: true
       # otherwise, default disposable template of disposables becomes web-dvm
       - default_dispvm: offline-dvm
@@ -22,6 +23,11 @@ web-dvm-create-qube:
     - tags:
       - add:
         - web
+{% elif grains['id'] == template %}
+web-dvm-packages:
+  pkg.installed:
+    pkgs:
+      - fonts-thai-tlwg
 {% elif grains['id'] == 'web-dvm' %}
 web-dvm-firefox-policy:
   file.managed:
