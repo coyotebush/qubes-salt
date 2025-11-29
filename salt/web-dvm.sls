@@ -1,4 +1,4 @@
-{% set template = 'debian-12-custom' %}
+{% set template = 'debian-13-custom' %}
 {% if grains['id'] == 'dom0' %}
 web-dvm-create-qube:
   qvm.vm:

@@ -23,7 +23,7 @@ user:
     - sys-audio
   dom0 or fedora-42-custom or zoom:
     - zoom
-  dom0 or debian-12-custom:
+  dom0 or debian-13-custom:
     - debian
     - offline-dvm
 #  '*':

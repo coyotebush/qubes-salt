@@ -1,14 +1,14 @@
 {% if grains['id'] == 'dom0' %}
-debian-12-xfce:
+debian-13-xfce:
   qvm.template_installed
 
-debian-12-custom:
+debian-13-custom:
   qvm.clone:
-    - source: debian-12-xfce
+    - source: debian-13-xfce
     - require:
-      - qvm: debian-12-xfce
+      - qvm: debian-13-xfce
 
-{% elif grains['id'] == 'debian-12-custom' %}
+{% elif grains['id'] == 'debian-13-custom' %}
 # Packages used in unmanaged qubes
 debian-packages:
   pkg.installed:
@@ -27,7 +27,13 @@ debian-packages:
       - qubes-app-shutdown-idle
       - shotwell
       - viking
+'/etc/apt/sources.list.d/backports.list':
+  file.managed:
+    - makedirs: true
+    - contents: 'deb https://deb.debian.org/debian trixie-backports main'
 josm:
   pkg.installed:
-    - fromrepo: bookworm-backports
+    - fromrepo: trixie-backports
+    - require:
+      - file: '/etc/apt/sources.list.d/backports.list'
 {% endif %}
