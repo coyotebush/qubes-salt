@@ -20,13 +20,12 @@ fedora-packages:
       - qubes-video-companion
       - task
       - viking
-'/etc/systemd/system/multi-user.target.wants/qubes-ctapproxy@sys-audio.service':
-  file.symlink:
-    - target: '/usr/lib/systemd/system/qubes-ctapproxy@.service'
+'qubes-ctapproxy@sys-audio.service':
+  service.enabled:
     - require:
       - pkg: fedora-packages
-'/etc/systemd/system/multi-user.target.wants/qubes-ctapproxy@sys-usb.service':
-  file.absent:
+'qubes-ctapproxy@sys-usb.service':
+  service.disabled:
     - require:
       - pkg: fedora-packages
 {% endif %}
