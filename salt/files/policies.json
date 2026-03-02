@@ -16,6 +16,11 @@
     "OverrideFirstRunPage": "",
 
     "Preferences": {
+      "browser.tabs.groups.enabled": {
+        "Value": false,
+        "Type": "boolean",
+        "Status": "default"
+      },
       "browser.tabs.inTitlebar": {
         "Value": 0,
         "Type": "number",
