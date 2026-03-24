@@ -20,6 +20,7 @@ web-dvm-create-qube:
         - appmenus-dispvm
       - set:
         - menu-items: firefox-esr.desktop
+        - preload-dispvm-max: '2'
     - tags:
       - add:
         - web
