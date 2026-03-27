@@ -18,8 +18,8 @@ sys-audio-create-qube:
       - netvm: ''
       - default_dispvm: ''
       - pcidevs:
-        - '00:14.0' # USB controller for Bluetooth and webcam
-        - '00:1f.3' # Audio controller
+        - '00_14.0' # USB controller for Bluetooth and webcam
+        - '00_1f.3' # Audio controller
       - pci_strictreset: false
       - autostart: true
       - provides-network: true # otherwise qubesd removes the servicevm feature on boot
@@ -30,6 +30,7 @@ sys-audio-create-qube:
         - service.blueman
       - disable:
         - service.network-manager # otherwise enabled due to provides-network per `man qvm-service`
+        - service.minimal-usbvm # was added by qubes-dist-upgrade
         - restart-after-update
       - set:
         - menu-items: 'blueman-manager.desktop org.pulseaudio.pavucontrol.desktop'
