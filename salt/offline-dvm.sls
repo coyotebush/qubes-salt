@@ -3,10 +3,10 @@
 offline-dvm:
   qvm.vm:
     - present:
-      - label: red
+      - label: green
       - template: {{ template }}
     - prefs:
-      - label: red
+      - label: green
       - template: {{ template }}
       - template_for_dispvms: true
       - netvm: ''
