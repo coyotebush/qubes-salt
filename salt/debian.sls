@@ -2,11 +2,21 @@
 debian-13-xfce:
   qvm.template_installed
 
+debian-xfce-skip-update:
+  qvm.features:
+    - name: debian-13-xfce
+    - enable:
+      - skip-update
+
 debian-13-custom:
   qvm.clone:
     - source: debian-13-xfce
-    - require:
-      - qvm: debian-13-xfce
+
+debian-skip-update:
+  qvm.features:
+    - name: debian-13-custom
+    - disable:
+      - skip-update
 
 {% elif grains['id'] == 'debian-13-custom' %}
 # Packages used in unmanaged qubes
