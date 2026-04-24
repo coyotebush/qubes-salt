@@ -1,4 +1,4 @@
-{% set template = 'fedora-42-custom' %}
+{% set template = 'fedora-43-custom' %}
 {% if grains['id'] == 'dom0' %}
 zoom:
   qvm.vm:

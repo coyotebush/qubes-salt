@@ -17,11 +17,11 @@
 user:
   dom0 or web-dvm:
     - web-dvm
-  dom0 or fedora-42-custom:
+  dom0 or fedora-43-custom:
     - fedora
-  dom0 or fedora-42-custom or sys-audio:
+  dom0 or fedora-43-custom or sys-audio:
     - sys-audio
-  dom0 or fedora-42-custom or zoom:
+  dom0 or fedora-43-custom or zoom:
     - zoom
   dom0 or debian-13-custom:
     - debian

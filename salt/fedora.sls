@@ -1,20 +1,28 @@
 {% if grains['id'] == 'dom0' %}
-fedora-42-xfce:
+fedora-43-xfce:
   qvm.template_installed
 
-fedora-42-custom:
-  qvm.clone:
-    - source: fedora-42-xfce
-    - require:
-      - qvm: fedora-42-xfce
+fedora-xfce-skip-update:
+  qvm.features:
+    - name: fedora-43-xfce
+    - enable:
+      - skip-update
 
-{% elif grains['id'] == 'fedora-42-custom' %}
+fedora-43-custom:
+  qvm.clone:
+    - source: fedora-43-xfce
+
+fedora-custom-update:
+  qvm.features:
+    - name: fedora-43-custom
+    - disable:
+      - skip-update
+
+{% elif grains['id'] == 'fedora-43-custom' %}
 # Packages used in unmanaged qubes
 fedora-packages:
   pkg.installed:
     - pkgs:
-      # https://github.com/QubesOS/qubes-issues/issues/9639
-      - chromium
       - qubes-app-shutdown-idle
       - qubes-ctap
       - qubes-video-companion
