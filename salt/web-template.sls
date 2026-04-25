@@ -3,28 +3,28 @@
 
 {% if grains['id'] == 'dom0' %}
 # conflicts with debian.sls
-#debian-12-xfce:
+#debian-13-xfce:
 #  qvm.template_installed
 
-debian-12-web-clone:
+debian-13-web-clone:
   qvm.clone:
-    - name: debian-12-web
-    - source: debian-12-xfce
-    - require:
-      - qvm: debian-12-xfce
+    - name: debian-13-web
+    - source: debian-13-xfce
 
-debian-12-web:
+debian-13-web:
   qvm.vm:
     - features:
+      - disable:
+        - skip-update
       - set:
         - menu-items: firefox-esr.desktop
     - prefs:
       # enable networking on the template to pull from GitHub
       - netvm: sys-firewall
     - require:
-      - qvm: debian-12-web-clone
+      - qvm: debian-13-web-clone
 
-{% elif grains['id'] == 'debian-12-web' %}
+{% elif grains['id'] == 'debian-13-web' %}
 web-template-packages:
   pkg.installed:
     - pkgs:

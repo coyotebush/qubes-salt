@@ -5,10 +5,10 @@ web-example:
     - present:
       - label: yellow
       # only ESR supports SearchEngines, only Debian packages ESR
-      - template: debian-12-web
+      - template: debian-13-web
     - prefs:
       - label: yellow
-      - template: debian-12-web
+      - template: debian-13-web
     - features:
       - set:
         - menu-items: firefox-esr.desktop
