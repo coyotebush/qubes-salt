@@ -26,6 +26,11 @@
         "Type": "number",
         "Status": "default"
       },
+      "browser.translations.automaticallyPopup": {
+        "Value": false,
+        "Type": "boolean",
+        "Status": "default"
+      },
       "ui.key.menuAccessKeyFocuses": {
         "Value": false,
         "Type": "boolean",
