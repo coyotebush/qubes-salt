@@ -25,8 +25,10 @@ fedora-packages:
     - pkgs:
       - qubes-app-shutdown-idle
       - qubes-ctap
+      - qubes-distro-keys
       - qubes-video-companion
       - task
+      - tasksh
       - viking
 'qubes-ctapproxy@sys-audio.service':
   service.enabled:
