@@ -51,8 +51,8 @@ sys-audio-installed:
 '/etc/xdg/autostart/pasystray.desktop':
   file.line:
     - content: 'Hidden=true' # disable autostart in other qubes based on the template
-    - mode: insert
-    - location: end
+    - mode: ensure
+    - after: 'Desktop Entry'
 {% elif grains['id'] == 'sys-audio' %}
 '/rw/config/qubes-bind-dirs.d/50_user.conf':
   file.managed:
