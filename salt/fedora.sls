@@ -1,30 +1,30 @@
 {% if grains['id'] == 'dom0' %}
-fedora-43-xfce:
+fedora-44-xfce:
   qvm.template_installed
 
 fedora-xfce-skip-update-backup:
   qvm.vm:
-    - name: fedora-43-xfce
+    - name: fedora-44-xfce
     - prefs:
       - include_in_backups: false
     - features:
       - enable:
         - skip-update
 
-fedora-43-custom:
+fedora-44-custom:
   qvm.clone:
-    - source: fedora-43-xfce
+    - source: fedora-44-xfce
 
 fedora-custom-update-backup:
   qvm.vm:
-    - name: fedora-43-custom
+    - name: fedora-44-custom
     - prefs:
       - include_in_backups: true
     - features:
       - disable:
         - skip-update
 
-{% elif grains['id'] == 'fedora-43-custom' %}
+{% elif grains['id'] == 'fedora-44-custom' %}
 # Packages used in unmanaged qubes
 fedora-packages:
   pkg.installed:
