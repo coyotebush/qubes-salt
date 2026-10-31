@@ -29,7 +29,4 @@ web-example-firefox-policy:
     - makedirs: true
     - source: salt://{{ tpldir }}/files/policies.json.jinja
     - template: jinja
-web-example-firefox-rc:
-  file.absent:
-    - name: /rw/config/rc.local.d/firefox.rc
 {% endif %}
