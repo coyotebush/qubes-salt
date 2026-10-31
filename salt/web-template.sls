@@ -46,4 +46,9 @@ web-template-packages:
 # TODO update qubes-url-redirector Makefile to use this location
 '/usr/lib/mozilla/native-messaging-hosts/qvm_open_in_vm.json':
   file.absent
+'/etc/firefox/policies':
+  file.symlink:
+    # provided (optionally) by app qube
+    - target: '/rw/config/firefox/policies'
+    - makedirs: true
 {% endif %}

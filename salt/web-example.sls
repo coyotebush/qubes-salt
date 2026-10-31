@@ -30,10 +30,6 @@ web-example-firefox-policy:
     - source: salt://{{ tpldir }}/files/policies.json.jinja
     - template: jinja
 web-example-firefox-rc:
-  file.managed:
+  file.absent:
     - name: /rw/config/rc.local.d/firefox.rc
-    - makedirs: true
-    - contents: |
-        mkdir -p /etc/firefox && ln -s /rw/config/firefox/policies /etc/firefox/policies
-    - mode: 0755
 {% endif %}
